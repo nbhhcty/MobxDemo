@@ -1,0 +1,12 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    "transform-decorators-legacy"
+  ],
+  "sourceMaps": true,
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]  //生产环境移除LOG
+    }
+  }
+}
