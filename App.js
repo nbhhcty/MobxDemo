@@ -17,6 +17,15 @@ import {observer} from 'mobx-react/native';
 @observer
 export default class App extends Component<Props> {
 
+    constructor() {
+        super();
+
+        // autorun内如果引用到被 @observable 修饰的变量，则会自动执行，方便监听打印日志log
+        autorun(() => {
+            console.log('this.count =' + this.count)
+        })
+    }
+
     /*
     * 使用@observable 监控数据源
     * */
