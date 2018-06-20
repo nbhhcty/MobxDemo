@@ -8,7 +8,7 @@ import {
 /*
 * 引入这个两个头文件
 * */
-import {observable, action} from 'mobx';
+import {observable, action, autorun} from 'mobx';
 import {observer} from 'mobx-react/native';
 
 /*
