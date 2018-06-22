@@ -3,6 +3,7 @@ import {
     View,
     StyleSheet,
     Text,
+    TextInput
 } from 'react-native';
 
 /*
@@ -10,10 +11,11 @@ import {
 * */
 import {observable, action, autorun} from 'mobx';
 import {observer} from 'mobx-react/native';
-
+import AutoHideKeyboard from './Demo/decorator/AutoHideKeyBoard'
 /*
 * 添加@observer 字段监控 MobxTextOne 组件，当数据改变的时候更新界面
 * */
+@AutoHideKeyboard
 @observer
 export default class App extends Component<Props> {
 
@@ -54,6 +56,9 @@ export default class App extends Component<Props> {
                 <Text>{this.count}</Text>
                 <Text style={styles.btn} onPress={this.add}> +</Text>
                 <Text style={styles.btn} onPress={this.dec}> -</Text>
+                <TextInput style={{backgroundColor:'red', width: 50, height: 50}}>
+
+                </TextInput>
             </View>
         );
     }
